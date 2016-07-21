@@ -1,0 +1,19 @@
+/*index 其余各部分*/
+.item,.search{margin:0 auto;}
+/*-------------------------------------banner----------------------------------------*/
+.banner{width:100%;height:420px;margin-bottom:20px;}
+.bannerlist{height:420px;overflow:hidden;}
+
+/*-------------------------------------main----------------------------------------*/
+.main{width:100%;min-height:100px;}
+.main .item{width:1180px;height:212px;text-align:center;}
+.item .product{width:312px;height:200px;float:left;padding:5px;border:1px solid #ddd;}
+.item .activity{width:500px;height:200px;float:left;padding:5px;border:1px solid #ddd;margin-left:15px;}
+.item .operation{width:312px;height:200px;float:right;padding:5px;border:1px solid #ddd;}
+.search{width:1150px;height:120px;background:#f9f9f9;padding:22px 15px;}
+.search a img{margin-right:10px;}
+.search .lzsearch{float:right;width:540px;height:120px;}
+.search .lzsearch input{width:44px;height:20px;border:1px solid #abadb3;margin:0 8px;}
+.search .lzsearch b{background:#e7e7e7;font-weight:bold;float:left;width:45px;height:33px;line-height:33px;text-align:center;}
+.search .lzsearch .feature{background:#f9f9f9;width:214px;height:30px;line-height:30px;border:1px solid #dcdcdc;margin:0 0 15px 12px;float:left;}
+#long1,#long2{width:296px;}
