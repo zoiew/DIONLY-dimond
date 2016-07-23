@@ -3,6 +3,8 @@
 /*-------------------------------------banner----------------------------------------*/
 .banner{width:100%;height:420px;margin-bottom:20px;}
 .bannerList{height:420px;overflow:hidden;}
+.bannerList li{width:100%;height:420px;position:relative;}
+.bannerList img{width:100%height:420px;position:absolute;left:-18%;}
 
 /*-------------------------------------main----------------------------------------*/
 .main{width:100%;min-height:100px;}
