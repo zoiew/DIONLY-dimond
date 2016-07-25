@@ -4,17 +4,17 @@
 		<meta charset="utf-8" />
 		<title>【钻石|钻戒】戴欧妮钻石钻戒网为您提供最全的钻石、钻戒、裸钻等珠宝首饰,了解最新钻石价格和钻戒价格,个性DIY珠宝、钻石、钻戒、对戒定制,全国钻戒定制热线：4006-578-478""</title>
 		<!-------------------引入外部css样式----------------------------------->
-		<link type="text/css" rel="stylesheet" href="css/reset.css"  />	
-		<link type="text/css" rel="stylesheet" href="css/base.css"  />
-		<link type="text/css" rel="stylesheet" href="css/common.css"  />
-		<link type="text/css" rel="stylesheet" href="css/index.css"  />
-		<link type="text/css" rel="stylesheet" href="css/style.css"  />
-		<link type="text/css" rel="stylesheet" href="css/forjsjq.css"  />
+		<link type="text/css" rel="stylesheet" href="../css/reset.css"  />	
+		<link type="text/css" rel="stylesheet" href="../css/base.css"  />
+		<link type="text/css" rel="stylesheet" href="../css/common.css"  />
+		<link type="text/css" rel="stylesheet" href="../css/cart.css"  />
+		<link type="text/css" rel="stylesheet" href="../css/style.css"  />
+		<link type="text/css" rel="stylesheet" href="../css/forjsjq.css"  />
 		<!-------------------引入jq类库等相关的文件----------------------------------->
-		<script src="assets/jquery-1.12.0.js"></script>
+		<script src="../assets/jquery-1.12.0.js"></script>
 		
 		<!-------------------引入封装的函数等相关的文件----------------------------------->
-		<script src="js/index.js"></script>
+		<script src="../js/index.js"></script>
 		
 		<!---------------------------------------------js部分----------------------------------------------->				
 		<script>
@@ -58,79 +58,24 @@
 					$(this).siblings().find('span').css('display','none');
 					index = $(this).index();
 					$localCity.eq(index).show().siblings().hide();
-					
 				})
 				
 				
 				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			/*-------------------------------3.banner轮播图切换效果；-------------------------------------*/
-				//获取div，ul,li对象；
-				var $nav = $('.nav');
-				var $bannerList = $('.bannerList');
-				var $bannerLi =$bannerList.find('li');
-				var index = 0;
-				var timer = setInterval(foucs,3000);
-				//创建三个小图标；
-				var $minChangeBtn = $('<ul/>');
-				for(var i=1;i<=3;i++){
-					$('<li/>').addClass('sonBtn').appendTo($minChangeBtn);
-				}
-				$minChangeBtn.addClass('minChangeBtn').appendTo($nav);
-				var $sonBtn = $minChangeBtn.find('li');
-				caroursel();
-				//给小圆点加点击事件，点击时到相应的banner图；
-				$minChangeBtn.on('click','li',function(){
-					index = $(this).index();
-					console.log(index);
-					caroursel();
-				});
-				function foucs(){
-		            if(index >= $bannerLi.length){
-		                index = 0; 
-		            }
-		            caroursel();
-		            index++;
-		        }
-				//图片轮播函数；
-				function caroursel(){
-					//console.log(index);
-			        $.each($bannerLi,function(idx){
-			            if(idx == index){
-			                $(this).show();
-			                 $sonBtn.eq(idx).css('background','#da6f13');
-			               // $sonBtn.eq(idx).show();
-			            }
-			           else{
-			                $(this).hide();		          
-			                 $sonBtn.eq(idx).css('background','#656565');
-			               // $(simgs[idx]).animate({opacity:0.5});
-			           }
-			        })
-			    }
-				
-					
-			})
+			});
+
 		
 		</script>
+	
 	</head>
 	<body>
-		<!--------------------------------------topbar------------------------------------------------>
+		<!-------------------topbar---------------------------------->
 		<div class="topbar">
 			<div class="wrap">
-				<div class="left">您好，欢迎光临戴欧妮珠宝网！&nbsp;&nbsp;&nbsp;&nbsp;<a href="html/login.html">登陆</a>&nbsp;/&nbsp;<a href="html/register.html">注册</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;体验中心：<a href="#">广东.广州分店</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">切换</a></div>
+				<div class="left">您好，欢迎光临戴欧妮珠宝网！&nbsp;&nbsp;&nbsp;&nbsp;<a href="login.html">登陆</a>&nbsp;/&nbsp;<a href="register.html">注册</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;体验中心：<a href="#">广东.广州分店</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">切换</a></div>
 				<div class="right">
 					<a href="#" class="user">我的戴欧妮</a>
-					<a href="html/cart.html" class="cart">我的珠宝箱[<span class="number">0</span>]</a>
+					<a href="cart.html" class="cart">我的珠宝箱[<span class="number">0</span>]</a>
 					<a href="#" class="certify">正品认证</a>
 					<a href="#" class="yuyue">预约进店</a>
 					<a href="#" class="mobie">手机版</a>
@@ -140,7 +85,7 @@
 			</div>
 		</div>
 		<div class="header">
-			<h1><img src="img/logo.png" alt="*" /></h1>
+			<h1><img src="../img/logo.png" alt="*" /></h1>
 			<div class="center">
 				<form method="post" action="">
 					<input type="text" id="keyword" placeholder="请输入型号或者名称"/>
@@ -148,7 +93,7 @@
 				</form>
 				<p><a href="#">永恒</a>&nbsp;&nbsp;&nbsp;<a href="#">浪漫</a>&nbsp;&nbsp;&nbsp;<a href="#">爱情</a>&nbsp;&nbsp;&nbsp;<a href="#">甜蜜</a></p>
 			</div>
-			<div class="code"><img src="img/code.png" alt="*"/></div>
+			<div class="code"><img src="../img/code.png" alt="*"/></div>
 		</div>
 		
 		<!----------------------------------------nav--------------------------------------------->
@@ -171,213 +116,24 @@
 			<ul class="navlist">
 				<li><a href="index.html">首页</a></li>
 				<li><a href="#">裸钻</a></li>
-				<li><a href="#">钻戒定制</a></li>
+				<li><a href="list.html">钻戒定制</a></li>
 				<li><a href="#">定价产品</a></li>
 				<li><a href="#">黄金</a></li>
 				<li><a href="#">来图定制</a></li>
 				<li><a href="#">珠宝百科</a></li>
 			</ul>
-			<h2><img src="img/phone.png" alt="*"/></h2>
+			<h2><img src="../img/phone.png" alt="*"/></h2>
 		</div>
-		<div class="banner">
-			<ul class="bannerList">
-				<li><a href="#"><img src="img/banner1.jpg"/></a></li>
-				<li><a href="#"><img src="img/banner2.jpg"/></a></li>
-				<li><a href="#"><img src="img/banner3.jpg"/></a></li>
-			</ul>
-		</div>
-<!---------------------------------------------main----------------------------------------------->		
-		<div class="main">
-			<div class="item">
-				<div class="product">
-					<a href="#"><img src="img/sweet.jpg"/></a><br>
-					"sweet 系列产品"						
-				</div>
-				<div class="activity">
-					<a href="#"><img src="img/activity.jpg"/></a><br>
-					"系列产品"		
-				</div>
-				<div class="operation">
-					<a href="#"><img src="img/sweet.jpg"/></a><br>
-					"招商合作"		
-				</div>
-			</div>
-			<div class="search">
-				<a href="#"><img src="img/searchzs.png" /></a>
-				<div class="lzsearch">
-					<p class="feature"><b>石重</b><input type="text" value="0.00"><span>--</span><input type="text" value="10.00"/><span>克拉</span></p>
-					<p class="feature" id="long1"><b>颜色</b><img src="img/1.png"><img src="img/2.png"><img src="img/3.png"><img src="img/4.png"><img src="img/5.png"><img src="img/6.png"><img src="img/7.png"></p>
-					<p class="feature"><b>抛光</b><img src="img/1(1).png"><img src="img/2(1).png"><img src="img/3(1).png"><img src="img/4(1).png"></p>
-					<p class="feature" id="long2"><b>净度</b><img src="img/1(2).png"><img src="img/2(2).png"><img src="img/3(2).png"><img src="img/4(2).png"><img src="img/5(1).png"><img src="img/6(1).png"></p>
-					<input id="searchBtn" type="button" value="裸钻搜索"/>
-				</div>
-			</div>
-			<div class="ring">
-				<div class="ringType">
-					<div><a href="#"><img src="img/ring.jpg"</a></div>
-					<div class="bag">
-						<ul class="typelist">
-							<li><a href="#">女戒</a></li>
-							<li><a href="#">男戒</a></li>
-							<li><a href="#">对戒</a></li>
-						</ul>
-						<p class="price"><a href="#">1000元以下</a></p>
-						<p class="price"><a href="#">1000-1999元</a></p>
-						<p class="price"><a href="#">2000-2999元</a></p>
-						<p class="price"><a href="#">3000元以上</a></p>
-					</div>
-						
-				</div>
-				<div class="favourite"><img src="img/2.jpg" alt="*" /></div>
-				<div class="hot">
-					<div><a href="#"><img src="img/3.jpg" alt="*" /></a></div>
-					<div><a href="#"><img src="img/4.jpg" alt="*" /></a></div>
-					<p><a href="#"><img src="img/5.jpg" alt="*" /></a></p>
-					<p class="huamou"><a href="#"><img src="img/6.jpg" alt="*" /></a></p>
-					<p><a href="#"><img src="img/7.jpg" alt="*" /></a></p>
-				</div>
-			</div>
-			<ul class="xz">
-				<li><a href="#"><img src="img/1.jpg" alt="*" /></a></li>
-				<li><a href="#"><img src="img/2(3).jpg" alt="*" /></a></li>
-				<li><a href="#"><img src="img/3(3).jpg" alt="*" /></a></li>
-				<li><a href="#"><img src="img/4(3).jpg" alt="*" /></a></li>
-			</ul>
-			<div class="lover">
-				<div class="couple">
-					<a href="#"><img src="img/couple.jpg"</a>
-					<div class="bag">
-						<ul class="typelist">
-							<li><a href="#">18k</a></li>
-							<li><a href="#">钻石</a></li>
-						</ul>
-						<p class="price"><a href="#">3000-5000元</a></p>
-						<p class="price"><a href="#">5000元以上</a></p>
-					</div>
-				</div>
-				<div class="travel"><a href="#"><img src="img/7(1).jpg" alt="*" /></a></div>
-				<div class="hot">
-					<div><a href="#"><img src="img/lovershow1.jpg" alt="*" /></a></div>
-					<div><a href="#"><img src="img/lovershow2.jpg" alt="*" /></a></div>
-					<p><a href="#"><img src="img/lovershow3.jpg" alt="*" /></a></p>
-					<p class="huamou"><a href="#"><img src="img/lovershow4.jpg" alt="*" /></a></p>
-					<p><a href="#"><img src="img/lovershow5.jpg" alt="*" /></a></p>
-				</div>				
-			</div>
+<!---------------------------------------------registerArea----------------------------------------------->				
+		<div class="cartWrap">
+			<div class="cartArea">
 			
 			
-<!------------------------------------挚爱一生系列----------------------------------------------------------->			
-			<div class="ring">
-				<div class="ringType">
-					<div><a href="#"><img src="img/wholelife1.jpg"</a></div>
-					<div class="bag">
-						<ul class="typelist">
-							<li><a href="#">碧玺</a></li>
-							<li><a href="#">红宝石</a></li>
-							<li><a href="#">蓝宝石</a></li>
-							<li><a href="#">芙蓉石</a></li>
-						</ul>
-						<p class="price"><a href="#">1000-2000元</a></p>
-						<p class="price"><a href="#">2000-3000元</a></p>
-						<p class="price"><a href="#">3000-5000元</a></p>					
-						<p class="price"><a href="#">5000元以上</a></p>
-					</div>	
-				</div>
-				<div class="favourite"><img src="img/wholelife2.jpg" alt="*" /></div>
-				<div class="hot">
-					<div><a href="#"><img src="img/wholelife3.jpg" alt="*" /></a></div>
-					<div><a href="#"><img src="img/wholelife4.jpg" alt="*" /></a></div>
-					<p><a href="#"><img src="img/wholelife5.jpg" alt="*" /></a></p>
-					<p class="huamou"><a href="#"><img src="img/wholelife6.jpg" alt="*" /></a></p>
-					<p><a href="#"><img src="img/wholelife7.jpg" alt="*" /></a></p>
-				</div>
-			</div>
-			<div class="shopNum"></div>
 			
-<!------------------------------------pearl珍珠系列----------------------------------------------------------->			
+			</div>
+	
 			
-			<div class="lover">
-				<div class="couple">
-					<a href="#"><img src="img/pearl1.jpg"</a>
-					<div class="bag">
-						<ul class="typelist">
-							<li><a href="#">18k</a></li>
-							<li><a href="#">钻石</a></li>
-						</ul>
-						<p class="price"><a href="#">3000-5000元</a></p>
-						<p class="price"><a href="#">5000元以上</a></p>
-					</div>
-				</div>
-				<div class="travel"><a href="#"><img src="img/pearl7.jpg" alt="*" /></a></div>
-				<div class="hot">
-					<div><a href="#"><img src="img/pearl2.jpg" alt="*" /></a></div>
-					<div><a href="#"><img src="img/pearl3.jpg" alt="*" /></a></div>
-					<p><a href="#"><img src="img/pearl4.jpg" alt="*" /></a></p>
-					<p class="huamou"><a href="#"><img src="img/pearl5.jpg" alt="*" /></a></p>
-					<p><a href="#"><img src="img/pearl6.jpg" alt="*" /></a></p>
-				</div>				
-			</div>
-<!------------------------------------gold黄金系列----------------------------------------------------------->			
 			
-			<div class="lover">
-				<div class="couple">
-					<a href="#"><img src="img/gold1.jpg"</a>
-					<div class="bag">
-						<ul class="typelist">
-							<li><a href="#">18k</a></li>
-							<li><a href="#">钻石</a></li>
-						</ul>
-						<p class="price"><a href="#">3000-5000元</a></p>
-						<p class="price"><a href="#">5000元以上</a></p>
-					</div>
-				</div>
-				<div class="travel"><a href="#"><img src="img/gold7.jpg" alt="*" /></a></div>
-				<div class="hot">
-					<div><a href="#"><img src="img/gold2.jpg" alt="*" /></a></div>
-					<div><a href="#"><img src="img/gold3.jpg" alt="*" /></a></div>
-					<p><a href="#"><img src="img/gold4.jpg" alt="*" /></a></p>
-					<p class="huamou"><a href="#"><img src="img/gold5.jpg" alt="*" /></a></p>
-					<p><a href="#"><img src="img/gold6.jpg" alt="*" /></a></p>
-				</div>				
-			</div>
-			<!------------------------------------婚嫁 百科---------------------------------------->
-			<div class="baike">
-				<div class="news">
-					<h2 class="subTitle">最新资讯</h2>
-					<p class="pic"><img src="img/baike1.jpg" alt="*" /></p>
-					<ul class="article">
-						<li><a href="#">怎么选取戒托？怎样选取钻石戒托？</a></li>
-						<li><a href="#">教师节感恩优惠活动</a></li>
-						<li><a href="#">碧玺质量的鉴定方法，怎样鉴定碧玺的好坏？</a></li>
-						<li><a href="#">我的中国心，抗战胜利日珍藏版限量7.7折</a></li>
-						<li><a href="#">浅谈国内钻石市场未来发展趋势</a></li>
-					</ul>
-				</div>
-				<div class="news">
-					<h2 class="subTitle">最新资讯</h2>
-					<p class="pic"><img src="img/baike1.jpg" alt="*" /></p>
-					<ul class="article">
-						<li><a href="#">怎么选取戒托？怎样选取钻石戒托？</a></li>
-						<li><a href="#">教师节感恩优惠活动</a></li>
-						<li><a href="#">碧玺质量的鉴定方法，怎样鉴定碧玺的好坏？</a></li>
-						<li><a href="#">我的中国心，抗战胜利日珍藏版限量7.7折</a></li>
-						<li><a href="#">浅谈国内钻石市场未来发展趋势</a></li>
-					</ul>
-				</div>
-				<div class="news">
-					<h2 class="subTitle">最新资讯</h2>
-					<p class="pic"><img src="img/baike1.jpg" alt="*" /></p>
-					<ul class="article">
-						<li><a href="#">怎么选取戒托？怎样选取钻石戒托？</a></li>
-						<li><a href="#">教师节感恩优惠活动</a></li>
-						<li><a href="#">碧玺质量的鉴定方法，怎样鉴定碧玺的好坏？</a></li>
-						<li><a href="#">我的中国心，抗战胜利日珍藏版限量7.7折</a></li>
-						<li><a href="#">浅谈国内钻石市场未来发展趋势</a></li>
-					</ul>
-				</div>
-				<div class="flower"><img src="img/flowerName.jpg" alt="*" /></div>
-			</div>
-				
 		</div>
 
 			
@@ -412,7 +168,7 @@
 							<h4>周一至周日 9:30-20:00</h4>
 							<h4>咨询电话：15117991700</h4>
 						</div>
-						<div class="shopshow"><a href="#"><img src="img/beijing (1).jpg" /></a></div>
+						<div class="shopshow"><a href="#"><img src="../img/beijing (1).jpg" /></a></div>
 					</div>
 			<!-------------------------深圳--------------------------------------------- -->
 					<div class="localCity">
@@ -422,7 +178,7 @@
 							<h4>周一至周日 9:30-20:00</h4>
 							<h4>咨询电话：15117991700</h4>
 						</div>
-						<div class="shopshow"><a href="#"><img src="img/shenzhen.jpg" /></a></div>
+						<div class="shopshow"><a href="#"><img src="../img/shenzhen.jpg" /></a></div>
 					</div>
 			<!-------------------------天津--------------------------------------------- -->
 					<div class="localCity">
@@ -432,7 +188,7 @@
 							<h4>周一至周日 9:30-20:00</h4>
 							<h4>咨询电话：15117991700</h4>
 						</div>
-						<div class="shopshow"><a href="#"><img src="img/tianjin.jpg" /></a></div>
+						<div class="shopshow"><a href="#"><img src="../img/tianjin.jpg" /></a></div>
 					</div>		
 			<!-------------------------北京--------------------------------------------- -->
 					
@@ -443,7 +199,7 @@
 							<h4>周一至周日 9:30-20:00</h4>
 							<h4>咨询电话：15117991700</h4>
 						</div>
-						<div class="shopshow"><a href="#"><img src="img/chengdu.jpg" /></a></div>
+						<div class="shopshow"><a href="#"><img src="../img/chengdu.jpg" /></a></div>
 					</div>				
 			<!-------------------------北京--------------------------------------------- -->
 					
@@ -454,7 +210,7 @@
 							<h4>周一至周日 9:30-20:00</h4>
 							<h4>咨询电话：15117991700</h4>
 						</div>
-						<div class="shopshow"><a href="#"><img src="img/zhejiang.jpg" /></a></div>
+						<div class="shopshow"><a href="#"><img src="../img/zhejiang.jpg" /></a></div>
 					</div>				
 			<!-------------------------北京--------------------------------------------- -->
 					
@@ -465,7 +221,7 @@
 							<h4>周一至周日 9:30-20:00</h4>
 							<h4>咨询电话：15117991700</h4>
 						</div>
-						<div class="shopshow"><a href="#"><img src="img/jiangsu.jpg" /></a></div>
+						<div class="shopshow"><a href="#"><img src="../img/jiangsu.jpg" /></a></div>
 					</div>	
 			<!-------------------------北京--------------------------------------------- -->
 					
@@ -476,7 +232,7 @@
 							<h4>周一至周日 9:30-20:00</h4>
 							<h4>咨询电话：15117991700</h4>
 						</div>
-						<div class="shopshow"><a href="#"><img src="img/fujian.jpg" /></a></div>
+						<div class="shopshow"><a href="#"><img src="../img/fujian.jpg" /></a></div>
 					</div>		
 			<!-------------------------北京--------------------------------------------- -->
 					
@@ -487,7 +243,7 @@
 							<h4>周一至周日 9:30-20:00</h4>
 							<h4>咨询电话：15117991700</h4>
 						</div>
-						<div class="shopshow"><a href="#"><img src="img/hainan.jpg" /></a></div>
+						<div class="shopshow"><a href="#"><img src="../img/hainan.jpg" /></a></div>
 					</div>				
 			<!-------------------------北京--------------------------------------------- -->
 					
@@ -498,7 +254,7 @@
 							<h4>周一至周日 9:30-20:00</h4>
 							<h4>咨询电话：15117991700</h4>
 						</div>
-						<div class="shopshow"><a href="#"><img src="img/chongqin.jpg" /></a></div>
+						<div class="shopshow"><a href="#"><img src="../img/chongqin.jpg" /></a></div>
 					</div>				
 			<!-------------------------北京--------------------------------------------- -->
 					
@@ -509,7 +265,7 @@
 							<h4>周一至周日 9:30-20:00</h4>
 							<h4>咨询电话：15117991700</h4>
 						</div>
-						<div class="shopshow"><a href="#"><img src="img/hunan.jpg" /></a></div>
+						<div class="shopshow"><a href="#"><img src="../img/hunan.jpg" /></a></div>
 					</div>				
 			<!-------------------------北京--------------------------------------------- -->	
 					<div class="localCity">
@@ -519,7 +275,7 @@
 							<h4>周一至周日 9:30-20:00</h4>
 							<h4>咨询电话：15117991700</h4>
 						</div>
-						<div class="shopshow"><a href="#"><img src="img/hebei.jpg" /></a></div>
+						<div class="shopshow"><a href="#"><img src="../img/hebei.jpg" /></a></div>
 					</div>
 			<!-------------------------北京--------------------------------------------- -->	
 					<div class="localCity">
@@ -529,7 +285,7 @@
 							<h4>周一至周日 9:30-20:00</h4>
 							<h4>咨询电话：15117991700</h4>
 						</div>
-						<div class="shopshow"><a href="#"><img src="img/jiangxi.jpg" /></a></div>
+						<div class="shopshow"><a href="#"><img src="../img/jiangxi.jpg" /></a></div>
 					</div>									
 				</div>				
 			</div>
@@ -594,13 +350,13 @@
 			</div>
 			<div class="linkWrap">
 				<ul class="link">
-					<li><a href="#"><img src="img/link1.jpg" alt="*" /></a></li>
-					<li><a href="#"><img src="img/link2.jpg" alt="*" /></a></li>
-					<li><a href="#"><img src="img/link3.jpg" alt="*" /></a></li>
-					<li><a href="#"><img src="img/link4.jpg" alt="*" /></a></li>
-					<li><a href="#"><img src="img/link5.jpg" alt="*" /></a></li>
-					<li><a href="#"><img src="img/link6.jpg" alt="*" /></a></li>
-					<li id="last"><a href="#"><img src="img/link7.jpg" alt="*" /></a></li>
+					<li><a href="#"><img src="../img/link1.jpg" alt="*" /></a></li>
+					<li><a href="#"><img src="../img/link2.jpg" alt="*" /></a></li>
+					<li><a href="#"><img src="../img/link3.jpg" alt="*" /></a></li>
+					<li><a href="#"><img src="../img/link4.jpg" alt="*" /></a></li>
+					<li><a href="#"><img src="../img/link5.jpg" alt="*" /></a></li>
+					<li><a href="#"><img src="../img/link6.jpg" alt="*" /></a></li>
+					<li id="last"><a href="#"><img src="../img/link7.jpg" alt="*" /></a></li>
 				</ul>
 				
 			</div>
@@ -641,12 +397,12 @@
 		</div>
 		
 		<ul class="purchaseConsult">
-			<li><a><img src="img/consult1.jpg" alt="*" /></a></li>
-			<li><a><img src="img/consult2.jpg" alt="*" /></a></li>
-			<li><a><img src="img/consult3.jpg" alt="*" /></a></li>
-			<li><a><img src="img/consult4.jpg" alt="*" /></a></li>
-			<li><a><img src="img/consult5.jpg" alt="*" /></a></li>
-			<li><a><img src="img/consult6.jpg" alt="*" /></a></li>
+			<li><a><img src="../img/consult1.jpg" alt="*" /></a></li>
+			<li><a><img src="../img/consult2.jpg" alt="*" /></a></li>
+			<li><a><img src="../img/consult3.jpg" alt="*" /></a></li>
+			<li><a><img src="../img/consult4.jpg" alt="*" /></a></li>
+			<li><a><img src="../img/consult5.jpg" alt="*" /></a></li>
+			<li><a><img src="../img/consult6.jpg" alt="*" /></a></li>
 		</ul>
 		
 	
