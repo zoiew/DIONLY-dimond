@@ -13,59 +13,14 @@
 		<!-------------------引入jq类库等相关的文件----------------------------------->
 		<script src="../assets/jquery-1.12.0.js"></script>
 		
+		<!-------------------引入模块类库等相关的文件----------------------------------->
+		<script src="../js/module.js"></script>
+		
 		<!-------------------引入封装的函数等相关的文件----------------------------------->
 		<script src="../js/index.js"></script>
 		
-		<!---------------------------------------------js部分----------------------------------------------->				
-		<script>
-			$(function(){
-				/*-------------------------------一、common部分；-------------------------------------*/
-			
-				/*-------------------------------1.下拉菜单subMenu效果；-------------------------------------*/
-				var $allType = $('.allType');
-				var $subMenu = $('.subMenu');
-				var $liMenu = $subMenu.find('li');
-				//添加一个span
-				$('<span/>').addClass('minTitle').insertBefore($subMenu);
-				var $minTitle = $('.minTitle');
-				$allType.hover(function(){
-					$subMenu.stop(true).slideDown(200);
-					$minTitle.css('background-image','url(img/subTitle2.jpg)');
-					console.log($minTitle);
-					console.log('show');
-				},function(){
-					$subMenu.stop(true).slideUp(800);
-					$minTitle.css('background-image','url(img/subTitle1.jpg)');
-				})
-		/*-------------------------------2.城市实体店切换效果；-------------------------------------*/
-			
-				var $localCity = $('.localCity');	
-				var $cityList = $('.cityList').find('li');
-				console.log($localCity.length);
-				console.log($cityList.length);
-				var index = 0;
-				$.each($cityList,function(idx,city){
-					$('<span/>').addClass('cityUnderline').appendTo(city);
-					$localCity.eq(0).show().siblings().hide();
-					
-				})
-				
-				//每个城市添加mouseover事件；
-				$cityList.on('mouseover',function(){
-					$(this).find('a').css('color','#e13a68');
-					$(this).find('span').css('display','block');
-					$(this).siblings().find('a').css('color','#222');
-					$(this).siblings().find('span').css('display','none');
-					index = $(this).index();
-					$localCity.eq(index).show().siblings().hide();
-				})
-				
-				
-				
-			});
-
 		
-		</script>
+		
 	
 	</head>
 	<body>
@@ -114,7 +69,7 @@
 				</ul>
 			</div>
 			<ul class="navlist">
-				<li><a href="index.html">首页</a></li>
+				<li><a href="../index.html">首页</a></li>
 				<li><a href="#">裸钻</a></li>
 				<li><a href="list.html">钻戒定制</a></li>
 				<li><a href="#">定价产品</a></li>
@@ -124,14 +79,108 @@
 			</ul>
 			<h2><img src="../img/phone.png" alt="*"/></h2>
 		</div>
-<!---------------------------------------------registerArea----------------------------------------------->				
+<!---------------------------------------------cartArea----------------------------------------------->				
 		<div class="cartWrap">
-			<div class="cartArea">
-			
-			
-			
+			<div class="catbox">
+				<h3><b>我的珠宝箱</b></h3>
+				  <table id="cartTable">
+				    <thead>
+				      <tr>
+				        <th><label>
+				            <input class="check-all check" type="checkbox"/>&nbsp;&nbsp;全选</label></th>
+				        <th>商品</th>
+				        <th>单价</th>
+				        <th>数量</th>
+				        <th>小计</th>
+				        <th>操作</th>
+				      </tr>
+				    </thead>
+				    <tbody>
+				      <tr>
+				        <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
+				        <td class="goods"><img src="../img/cartPic1.jpg" alt="*"/><span>爱上爱，材质：18K DCW012685D</span></td>
+				        <td class="price">3442.00</td>
+				        <td class="count"><span class="reduce"></span>
+				          <input class="count-input" type="text" value="1"/>
+				          <span class="add">+</span></td>
+				        <td class="subtotal">3442.00</td>
+				        <td class="operation"><span class="delete">删除</span></td>
+				      </tr>
+				      <tr>
+				        <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
+				        <td class="goods"><img src="../img/cartPic2.jpg" alt=""/><span>Merry me，材质：18K，镶口：45-50分 DRW070059D</span></td>
+				        <td class="price">4413.00</td>
+				        <td class="count"><span class="reduce"></span>
+				          <input class="count-input" type="text" value="1"/>
+				          <span class="add">+</span></td>
+				        <td class="subtotal">4413.00</td>
+				        <td class="operation"><span class="delete">删除</span></td>
+				      </tr>
+				      <tr>
+				        <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
+				        <td class="goods"><img src="../img/cartPic3.jpg" alt=""/><span>51分EX切工L颜色VS1净度（钻石） 1208842423</span></td>
+				        <td class="price">1428.50</td>
+				        <td class="count"><span class="reduce"></span>
+				          <input class="count-input" type="text" value="1"/>
+				          <span class="add">+</span></td>
+				        <td class="subtotal">1428.50</td>
+				        <td class="operation" ><span class="delete">删除</span></td>
+				      </tr>
+				      <tr>
+				        <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
+				        <td class="goods"><img src="../img/cartPic4.jpg" alt=""/><span>爱上爱，材质：18K DCW012685D</span></td>
+				        <td class="price">640.60</td>
+				        <td class="count"><span class="reduce"></span>
+				          <input class="count-input" type="text" value="1"/>
+				          <span class="add">+</span></td>
+				        <td class="subtotal">640.60</td>
+				        <td class="operation"><span class="delete">删除</span></td>
+				      </tr>
+				    </tbody>
+				  </table>
+				  <div class="foot" id="foot">
+				    <label class="fl select-all"><input type="checkbox" class="check-all check"/>&nbsp;&nbsp;全选</label>
+				    <a class="fl delete" id="deleteAll" href="javascript:;">删除</a>
+				    <div class="fr closing" onclick="getTotal();">结 算</div>
+				    <input type="hidden" id="cartTotalPrice" />
+				    <div class="fr total">合计：￥<span id="priceTotal">0.00</span></div>
+				    <div class="fr selected" id="selected">已选商品<span id="selectedTotal">0</span>件<span class="arrow up">︽</span><span class="arrow down">︾</span></div>
+				    <div class="selected-view">
+				      <div id="selectedViewList" class="clearfix">				      
+				      </div>
+				      <span class="arrow">◆<span>◆</span></span> </div>
+				  </div>
 			</div>
-	
+		</div>
+		<div class="recomend">
+			<h4><b>热门推荐</b><span><a href="#">更多</a></span></h4>
+			<div class="hrecWrap">
+				<p id="direction1">&lt;</p>
+				<div class="picWrap">
+					<ul class="hrec">
+						<li class="slide"><a href="#"><img src="../img/hrec1.jpg" alt="" /></a><br>
+							<div><a href="#">柔情似水</a></div>
+						</li>
+						<li class="slide"><a href="#"><img src="../img/hrec2.jpg" alt="" /></a><br>
+							<div><a href="#">柔情似水</a></div>
+						</li>
+						<li class="slide"><a href="#"><img src="../img/hrec3.jpg" alt="" /></a><br>
+							<div><a href="#">柔情似水</a></div>
+						</li>
+						<li class="slide"><a href="#"><img src="../img/hrec4.jpg" alt="" /></a><br>
+							<div><a href="#">柔情似水</a></div>
+						</li>
+						<li class="slide"><a href="#"><img src="../img/hrec5.jpg" alt="" /></a><br>
+							<div><a href="#">柔情似水</a></div>
+						</li>					
+						<li class="slide"><a href="#"><img src="../img/hrec6.jpg" alt="" /></a><br>
+							<div><a href="#">柔情似水</a></div>
+						</li>													
+					</ul>					
+				</div>
+				
+				<p id="direction2">&gt;</p>
+			</div>
 			
 			
 		</div>
@@ -397,13 +446,136 @@
 		</div>
 		
 		<ul class="purchaseConsult">
-			<li><a><img src="../img/consult1.jpg" alt="*" /></a></li>
-			<li><a><img src="../img/consult2.jpg" alt="*" /></a></li>
-			<li><a><img src="../img/consult3.jpg" alt="*" /></a></li>
-			<li><a><img src="../img/consult4.jpg" alt="*" /></a></li>
-			<li><a><img src="../img/consult5.jpg" alt="*" /></a></li>
-			<li><a><img src="../img/consult6.jpg" alt="*" /></a></li>
+			<li>
+				<a>
+					<img src="../img/consult1.jpg" alt="*" />
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="../img/consult2.jpg" alt="*" />
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="../img/consult3.jpg" alt="*" />
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="../img/consult4.jpg" alt="*" />
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="../img/consult5.jpg" alt="*" />
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="../img/consult6.jpg" alt="*" />
+				</a>
+				<div class='popover'><img src="../img/tcewm.png" alt="*" /></div>
+			</li>
 		</ul>
+		<!---------------------------------------------js部分----------------------------------------------->				
+		<script>
+			$(function(){
+				/*-------------------------------一、common部分；-------------------------------------*/
+			
+				/*-------------------------------1.下拉菜单subMenu效果；-------------------------------------*/
+				var $allType = $('.allType');
+				var $subMenu = $('.subMenu');
+				var $liMenu = $subMenu.find('li');
+				//添加一个span
+				$('<span/>').addClass('minTitle').insertBefore($subMenu);
+				var $minTitle = $('.minTitle');
+				$allType.hover(function(){
+					$subMenu.stop(true).slideDown(200);
+					$minTitle.css('background-image','url(../img/subTitle2.jpg)');
+					console.log($minTitle);
+					console.log('show');
+				},function(){
+					$subMenu.stop(true).slideUp(800);
+					$minTitle.css('background-image','url(../img/subTitle1.jpg)');
+				})
+		/*-------------------------------2.城市实体店切换效果；-------------------------------------*/
+			
+				var $localCity = $('.localCity');	
+				var $cityList = $('.cityList').find('li');
+				//console.log($localCity.length);
+				//console.log($cityList.length);
+				var index = 0;
+				$.each($cityList,function(idx,city){
+					$('<span/>').addClass('cityUnderline').appendTo(city);
+					$localCity.eq(0).show().siblings().hide();
+					
+				})
+				
+				//每个城市添加mouseover事件；
+				$cityList.on('mouseover',function(){
+					$(this).find('a').css('color','#e13a68');
+					$(this).find('span').css('display','block');
+					$(this).siblings().find('a').css('color','#222');
+					$(this).siblings().find('span').css('display','none');
+					index = $(this).index();
+					$localCity.eq(index).show().siblings().hide();
+				})	
+		/*-------------------------------购物车推荐的轮播图；-------------------------------------*/
+				//获取div，ul,li对象；
+				var $picWrap= $('.picWrap');
+				var $hrecWrap= $('.hrecWrap');
+				var $hrec= $('.hrec');
+				var $lbLi =$hrec.find('li');
+				var direction = 1;
+				var $left = $('#direction1');
+				var $right = $('#direction2');
+				//$picWrap.hover(function(){clearInterval(timer);},function(){setInterval(foucs,2000)})
+				$right.on('click',function(){
+					//clearInterval(timer);
+					direction = 0;
+					foucs();
+					return false;
+				})				
+				$left.on('click',function(){
+					//clearInterval(timer);
+					direction = 1;
+					foucs();
+					return false;	
+				})
+				function foucs(){
+		            //direction等于1：自右向左运动；
+		            if(direction==1){
+		            	carourselLeft();		
+		            //direction等于0：自左向右运动；
+		            }else if(direction==0){
+		            	carourselRight()
+		            }
+		       	}	
+				 //图片轮播函数；
+				function carourselLeft(){
+					//console.log(index);
+					 //$lbLi.first().remove().clone(true).appendTo($hrec);
+					 $('.picWrap ul li:first').remove().clone(true).appendTo($hrec);
+			    }
+				function carourselRight(){
+					//console.log(index);
+					 //$lbLi.last().remove().clone(true).prependTo($hrec);
+					 $('.picWrap ul li:last').remove().clone(true).prependTo($hrec);
+			   } 
+			   	/*	右侧咨询栏的弹窗二维码	*/
+				var $ulTc = $('.purchaseConsult');
+				var $liTc = $ulTc.find('li');
+				var $ewm = $liTc.eq(4);
+				var $popover = $('.popover');
+				$ewm.on('mouseover',function(){
+					$popover.show();
+					
+				}).on('mouseout',function(){
+					$popover.hide();				
+				}) 
+			});
+		</script>
 		
 	
 	</body>

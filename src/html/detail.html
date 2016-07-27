@@ -13,54 +13,15 @@
 		<!-------------------引入jq类库等相关的文件----------------------------------->
 		<script src="../assets/jquery-1.12.0.js"></script>
 		
+		<!-------------------引入jq类库等相关的文件(放大镜)----------------------------------->	
+		<script type="text/javascript" src="../assets/jquery.jqzoom.js"></script>
+		<script type="text/javascript" src="../assets/base.js"></script>
+		
 		<!-------------------引入封装的函数等相关的文件----------------------------------->
 		<script src="../js/index.js"></script>
+		<script src="../js/index.js"></script>
 		
-		<!---------------------------------------------js部分----------------------------------------------->				
-		<script>
-			$(function(){
-				/*-------------------------------一、common部分；-------------------------------------*/
-			
-				/*-------------------------------1.下拉菜单subMenu效果；-------------------------------------*/
-				var $allType = $('.allType');
-				var $subMenu = $('.subMenu');
-				var $liMenu = $subMenu.find('li');
-				//添加一个span
-				$('<span/>').addClass('minTitle').insertBefore($subMenu);
-				var $minTitle = $('.minTitle');
-				$allType.hover(function(){
-					$subMenu.stop(true).slideDown(200);
-					$minTitle.css('background-image','url(img/subTitle2.jpg)');
-					console.log($minTitle);
-					console.log('show');
-				},function(){
-					$subMenu.stop(true).slideUp(800);
-					$minTitle.css('background-image','url(img/subTitle1.jpg)');
-				})
-		/*-------------------------------2.城市实体店切换效果；-------------------------------------*/
-			
-				var $localCity = $('.localCity');	
-				var $cityList = $('.cityList').find('li');
-				console.log($localCity.length);
-				console.log($cityList.length);
-				var index = 0;
-				$.each($cityList,function(idx,city){
-					$('<span/>').addClass('cityUnderline').appendTo(city);
-					$localCity.eq(0).show().siblings().hide();
-					
-				})
-				
-				//每个城市添加mouseover事件；
-				$cityList.on('mouseover',function(){
-					$(this).find('a').css('color','#e13a68');
-					$(this).find('span').css('display','block');
-					$(this).siblings().find('a').css('color','#222');
-					$(this).siblings().find('span').css('display','none');
-					index = $(this).index();
-					$localCity.eq(index).show().siblings().hide();
-				})	
-			});
-		</script>
+		
 	
 	</head>
 	<body>
@@ -110,7 +71,7 @@
 			</div>
 			<ul class="navlist">
 				<li><a href="../index.html">首页</a></li>
-				<li><a href="#">裸钻</a></li>
+				<li><a href="list.html">裸钻</a></li>
 				<li><a href="list.html">钻戒定制</a></li>
 				<li><a href="#">定价产品</a></li>
 				<li><a href="#">黄金</a></li>
@@ -121,205 +82,165 @@
 		</div>
 <!---------------------------------------------listArea----------------------------------------------->				
 		<div class="detailWrap">
-			<div class="detailBanner"></div>
+			<div class="detailBanner">
+				<div class="listIndex"><b><a href="../index.html">产品</a></b>&nbsp;>&nbsp;<a href="list.html">女戒</a></div>				
+				<div class="productDetail">	
+	<!------------------------放大镜----------------------------------------------------->					
+					<div class="mangifyLeft">
+						 <div id="preview" class="spec-preview"> 
+					    	<span class="jqzoom"><img jqimg="../img/detailHm1.jpg" src="../img/detailHms1.jpg" /></span>
+					    </div>
+					    <!--缩图开始-->
+					    <div class="spec-scroll"> <a class="prev">&lt;</a> <a class="next">&gt;</a>
+					      <div class="items">
+					        <ul>
+					          <li><img alt="*" bimg="../img/detailHm1.jpg" src="../img/detailHms1.jpg" onmousemove="preview(this);"></li>
+					          <li><img alt="*" bimg="../img/detailHm2.jpg" src="../img/detailHms2.jpg" onmousemove="preview(this);"></li>
+					          <li><img alt="*" bimg="../img/detailHm3.jpg" src="../img/detailHms3.jpg" onmousemove="preview(this);"></li>
+					          <li><img alt="*" bimg="../img/detailHm4.jpg" src="../img/detailHms4.jpg" onmousemove="preview(this);"></li>
+					          <li><img alt="*" bimg="../img/detailHm1.jpg" src="../img/detailHms1.jpg" onmousemove="preview(this);"></li>
+					          <li><img alt="*" bimg="../img/detailHm2.jpg" src="../img/detailHms2.jpg" onmousemove="preview(this);"></li>
+					          <li><img alt="*" bimg="../img/detailHm3.jpg" src="../img/detailHms3.jpg" onmousemove="preview(this);"></li>
+					          <li><img alt="*" bimg="../img/detailHm4.jpg" src="../img/detailHms4.jpg" onmousemove="preview(this);"></li>
+					          <li><img alt="*" bimg="../img/detailHm1.jpg" src="../img/detailHms1.jpg" onmousemove="preview(this);"></li>
+					          <li><img alt="*" bimg="../img/detailHm2.jpg" src="../img/detailHms2.jpg" onmousemove="preview(this);"></li>
+					          <li><img alt="*" bimg="../img/detailHm3.jpgg" src="../img/detailHms3.jpg" onmousemove="preview(this);"></li>
+					          <li><img alt="*" bimg="../img/detailHm4.jpg" src="../img/detailHms4.jpg" onmousemove="preview(this);"></li>
+					        </ul>
+					      </div>
+					    </div>
+					    <!--缩图结束-->
+					</div>
+
+					<div class="mangifyRight">
+							<h3 class="mangigyTitle">产品名称：<b>永恒之心 - DRW010625D</b></h3>
+							<p>市场价格：<i>￥2209</i></p>
+							<p>商城价格：<em>￥1163</em></p>
+							<p>选用材质：<span>18k</span><span>18k</span><span>PT900</span><span>PT950</span></p>
+							<div class="chose">
+								钻石重量：
+								<select name="" id="" >
+									<option value="45-50分">45-50分</option>
+									<option value="45-50分">45-50分</option>
+									<option value="45-50分">45-50分</option>
+								</select>
+								<a href="#">现在去选钻石？</a>
+							</div>
+							<div class="size">
+								手寸：
+								<select name="" id="" class="fuxuan">
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+								</select>
+							</div>
+							<div class="sculptor">
+								刻字：
+								<ingput></ingput>
+								<a href="#">如：love一生（8个字符以内，中文为4个字）</a>
+							</div>
+							<p>价格说明：此售价为整个戒托的售价</p>
+							<p>证书说明：单个钻石小于20分的钻饰，只出具成品鉴定书</p>
+							<p>特别说明：15个工作日，特快定制6工作日，不含邮寄时间，有问题请<a class="kefu">咨询客服</a></p>
+							<p>库存配送：有货，全国顺丰保价包邮</p>
+							<p class="remark">备注：定制售价含20%损耗，最终价格按成品金重多退少补。</p>
+							<form method="post" action="cart.html" id="submitCart">
+								<input id="addCart" type="button" value="" />
+								<input id="addFavour" type="button" value="" />
+							</form>
+					</div>
+				</div>	
+			</div>
 			<div class="detailMain">
-				<div class="listIndex"><b><a href="../index.html">产品</a></b>&nbsp;>&nbsp;<a href="list.html">女戒</a></div>
-				<div class="listArea">
-					<div class="sidebar">
-						<div class="itemWrap">
-							<h3 class="bfb">百分百安心购物保证</h3>
-							<div class="type">
-								<img src="../img/bfbshopping.jpg" alt="*" />
-								
-							</div>	
-						</div>
-						<div class="itemWrap">
-							<h3>热门推荐</h3>							
-							<div class="hot">
-								<div class="pic">
-									<a href="#"><img src="../img/hot1.jpg" alt="*" /></a>
-										<p><a href="#">永恒之心</a></p>
-										<p>商城价：<span>￥1069.00</span></p>
-								</div>
-								<div class="pic">
-									<a href="#"><img src="../img/hot1.jpg" alt="*" /></a>
-										<p><a href="#">永恒之心</a></p>
-										<p>商城价：<span>￥1069.00</span></p>
-								</div>
-								<div class="pic">
-									<a href="#"><img src="../img/hot1.jpg" alt="*" /></a>
-										<p><a href="#">永恒之心</a></p>
-										<p>商城价：<span>￥1069.00</span></p>
-								</div>
-								<div class="pic">
-									<a href="#"><img src="../img/hot1.jpg" alt="*" /></a>
-										<p><a href="#">永恒之心</a></p>
-										<p>商城价：<span>￥1069.00</span></p>
-								</div>
-								<div class="pic">
-									<a href="#"><img src="../img/hot1.jpg" alt="*" /></a>
-										<p><a href="#">永恒之心</a></p>
-										<p>商城价：<span>￥1069.00</span></p>
-								</div>
+				<div class="sidebar">
+					<div class="itemWrap">
+						<h3 class="bfb">百分百安心购物保证</h3>
+						<div class="type">
+							<img src="../img/bfbshopping.jpg" alt="*" />
+							
+						</div>	
+					</div>
+					<div class="itemWrap">
+						<h3>热门推荐</h3>							
+						<div class="hot">
+							<div class="pic">
+								<a href="#"><img src="../img/yuanhui.jpg" alt="*" /></a>
+									<p><a href="#">永恒之心</a></p>
+							</div>
+							<div class="pic">
+								<a href="#"><img src="../img/yuanhui.jpg" alt="*" /></a>
+									<p><a href="#">永恒之心</a></p>
+							</div>
+							<div class="pic">
+								<a href="#"><img src="../img/yuanhui.jpg" alt="*" /></a>
+									<p><a href="#">永恒之心</a></p>
+							</div>
+							<div class="pic">
+								<a href="#"><img src="../img/yuanhui.jpg" alt="*" /></a>
+									<p><a href="#">永恒之心</a></p>
+							</div>
+							<div class="pic">
+								<a href="#"><img src="../img/yuanhui.jpg" alt="*" /></a>
+									<p><a href="#">永恒之心</a></p>
 							</div>
 						</div>
-						
-						
+					</div>						
+					<div class="itemWrap">
+						<h3>最近浏览</h3>							
+						<div class="hot">
+							<div class="pic">
+								<a href="#"><img src="../img/forever01.jpg" alt="*" /></a>
+									<p><a href="#">永恒之心</a></p>
+							</div>
+							<div class="pic">
+								<a href="#"><img src="../img/forever01.jpg" alt="*" /></a>
+									<p><a href="#">永恒之心</a></p>
+							</div>
+							<div class="pic">
+								<a href="#"><img src="../img/forever01.jpg" alt="*" /></a>
+									<p><a href="#">永恒之心</a></p>
+							</div>
+						</div>
 					</div>
-					<div class="productList">
-						<div class="topList">
-							<p><b>类型：</b>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">钻石</a></p>
-							<p><b>类型：</b>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">女戒</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">男戒</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">吊坠</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">耳饰</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">手链/手镯</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">项链/链牌</a></p>
-							<p><b>材质：</b>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">18K</a><span>备注：可定制PT900/PT950</span></p>
-							<p><b>价格：</b>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">1000元以下</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">1000-1999</a>|</p>
-						</div>
-						<div class="page">
-							<span>共998款|21款/页第1页/共48页</span>
-							<ul class="pageCode">
-								<li><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">5</a></li>
-								<li><a href="#">6</a></li>
-								<li><a href="#">7</a></li>
-								<li class="shenglue"><a href="#">……</a></li>
-								<li><a href="#">48</a></li>
-								<li><a href="#">下页</a></li>
-							</ul>
-						</div>
-						<ul class="titleList">
-							<li><a href="#">默认</a><span></span></li>
-							<li><a href="#">销量</a><span></span></li>
-							<li><a href="#">价格</a><span></span></li>
-							<li><a href="#">新品</a><span></span></li>
-						</ul>
-						<div class="picShow">
-							<ul>
-								<li>
-									<a href="#"><img src="../img/picShow1.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-								<li>
-									<a href="#"><img src="../img/picShow2.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-								<li>
-									<a href="#"><img src="../img/picShow3.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-								<li>
-									<a href="#"><img src="../img/picShow1.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-								<li>
-									<a href="#"><img src="../img/picShow2.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-								<li>
-									<a href="#"><img src="../img/picShow3.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-								<li>
-									<a href="#"><img src="../img/picShow1.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-								<li>
-									<a href="#"><img src="../img/picShow2.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-								<li>
-									<a href="#"><img src="../img/picShow3.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-								<li>
-									<a href="#"><img src="../img/picShow1.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-								<li>
-									<a href="#"><img src="../img/picShow2.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-								<li>
-									<a href="#"><img src="../img/picShow3.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-								<li>
-									<a href="#"><img src="../img/picShow1.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-								<li>
-									<a href="#"><img src="../img/picShow2.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-								<li>
-									<a href="#"><img src="../img/picShow3.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-								<li>
-									<a href="#"><img src="../img/picShow1.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-								<li>
-									<a href="#"><img src="../img/picShow2.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-								<li>
-									<a href="#"><img src="../img/picShow3.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-								<li>
-									<a href="#"><img src="../img/picShow1.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-								<li>
-									<a href="#"><img src="../img/picShow2.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-								<li>
-									<a href="#"><img src="../img/picShow3.jpg" alt="*" /></a>
-									<p><a href="#">爱情手镯（DBW134533D）</a></p>
-									<p class="price"><span>市场价：￥19841.00</span><b>商城价：<a href="#">￥10443.00</a></b></p>
-								</li>
-							</ul>
-						</div>
-						
+				</div>			
+				<div class="pInfor">
+					<img src="../img/eyeFlower.jpg" alt="*" />
+					<div class="certificate">
+						<h4>权威鉴定证书</h4>
+						<p class="description">证书是钻石质量的保证，也是钻石身份的象征。每一颗戴欧妮极致璀璨美钻，均配备美国宝石学院GIA国际鉴定证书或国家CMA权威证书，可登陆GIA与CMA网站复核。</p>
+						<img src="../img/certificate.jpg" alt="*" />
 					</div>
-			
-			
-			
+					<div class="professional">
+						<h4>权威鉴定证书</h4>
+						<p class="description">证书是钻石质量的保证，也是钻石身份的象征。每一颗戴欧妮极致璀璨美钻，均配备美国宝石学院GIA国际鉴定证书或国家CMA权威证书，可登陆GIA与CMA网站复核。</p>
+						<a href="#"><img src="../img/professional.jpg" alt="*" /></a>
+					</div>
+					
+					<div class="certificate">
+						<h4>权威鉴定证书</h4>
+						<p class="description">证书是钻石质量的保证，也是钻石身份的象征。每一颗戴欧妮极致璀璨美钻，均配备美国宝石学院GIA国际鉴定证书或国家CMA权威证书，可登陆GIA与CMA网站复核。</p>
+						<a href="#"><img src="../img/sculpt.jpg" alt="*" /></a>
+					</div>
+					<div class="certificate">
+						<h4>权威鉴定证书</h4>
+						<a href="#"><img src="../img/gift.jpg" alt="*" /></a>
+					</div>
+					<div class="certificate">
+						<h4>放心物流</h4>
+						<a href="#"><img src="../img/delivery.jpg" alt="*" /></a>
+					</div>
+					<div class="certificate">
+						<h4>放心售后</h4>
+						<a href="#"><img src="../img/artgoods.jpg" alt="*" /></a>
+					</div>
+					<div class="certificate">
+						<h4>钻石保养</h4>
+						<a href="#"><img src="../img/peservation.jpg" alt="*" /></a>
+						<a href="#"><img src="../img/leaveMsg.jpg" alt="*" /></a>
+					</div>
 				</div>
-				
-				
 			</div>
-			
-	
-			
-			
-		</div>
-
-			
-		
+		</div>	
 <!---------------------------------------------footer----------------------------------------------->				
 		<div class="footer">
 			<div class="cityShopWrap">
@@ -340,141 +261,137 @@
 						<li><a href="#">江西</a></li>
 					</ul>
 				</div>
-				
 				<div>
-			<!-------------------------北京--------------------------------------------- -->
-					<div class="localCity">
-						<div class="intrCity">
-							<h2>北京●朝阳区旗舰店&nbsp;体验中心</h2>
-							<h3>北京市西城区新街口南大街61号</h3>
-							<h4>周一至周日 9:30-20:00</h4>
-							<h4>咨询电话：15117991700</h4>
-						</div>
-						<div class="shopshow"><a href="#"><img src="../img/beijing (1).jpg" /></a></div>
+		<!-------------------------北京--------------------------------------------- -->
+				<div class="localCity">
+					<div class="intrCity">
+						<h2>北京●朝阳区旗舰店&nbsp;体验中心</h2>
+						<h3>北京市西城区新街口南大街61号</h3>
+						<h4>周一至周日 9:30-20:00</h4>
+						<h4>咨询电话：15117991700</h4>
 					</div>
-			<!-------------------------深圳--------------------------------------------- -->
-					<div class="localCity">
-						<div class="intrCity">
-							<h2>广东●深圳&nbsp;体验中心</h2>
-							<h3>北京市西城区新街口南大街61号</h3>
-							<h4>周一至周日 9:30-20:00</h4>
-							<h4>咨询电话：15117991700</h4>
-						</div>
-						<div class="shopshow"><a href="#"><img src="../img/shenzhen.jpg" /></a></div>
+					<div class="shopshow"><a href="#"><img src="../img/beijing (1).jpg" /></a></div>
+				</div>
+		<!-------------------------深圳--------------------------------------------- -->
+				<div class="localCity">
+					<div class="intrCity">
+						<h2>广东●深圳&nbsp;体验中心</h2>
+						<h3>北京市西城区新街口南大街61号</h3>
+						<h4>周一至周日 9:30-20:00</h4>
+						<h4>咨询电话：15117991700</h4>
 					</div>
-			<!-------------------------天津--------------------------------------------- -->
-					<div class="localCity">
-						<div class="intrCity">
-							<h2>天津&nbsp;体验中心</h2>
-							<h3>北京市西城区新街口南大街61号</h3>
-							<h4>周一至周日 9:30-20:00</h4>
-							<h4>咨询电话：15117991700</h4>
-						</div>
-						<div class="shopshow"><a href="#"><img src="../img/tianjin.jpg" /></a></div>
-					</div>		
-			<!-------------------------北京--------------------------------------------- -->
-					
-					<div class="localCity">
-						<div class="intrCity">
-							<h2>四川●成都&nbsp;体验中心</h2>
-							<h3>北京市西城区新街口南大街61号</h3>
-							<h4>周一至周日 9:30-20:00</h4>
-							<h4>咨询电话：15117991700</h4>
-						</div>
-						<div class="shopshow"><a href="#"><img src="../img/chengdu.jpg" /></a></div>
-					</div>				
-			<!-------------------------北京--------------------------------------------- -->
-					
-					<div class="localCity">
-						<div class="intrCity">
-							<h2>浙江●杭州店&nbsp;体验中心</h2>
-							<h3>北京市西城区新街口南大街61号</h3>
-							<h4>周一至周日 9:30-20:00</h4>
-							<h4>咨询电话：15117991700</h4>
-						</div>
-						<div class="shopshow"><a href="#"><img src="../img/zhejiang.jpg" /></a></div>
-					</div>				
-			<!-------------------------北京--------------------------------------------- -->
-					
-					<div class="localCity">
-						<div class="intrCity">
-							<h2>江苏●南京&nbsp;体验中心</h2>
-							<h3>北京市西城区新街口南大街61号</h3>
-							<h4>周一至周日 9:30-20:00</h4>
-							<h4>咨询电话：15117991700</h4>
-						</div>
-						<div class="shopshow"><a href="#"><img src="../img/jiangsu.jpg" /></a></div>
-					</div>	
-			<!-------------------------北京--------------------------------------------- -->
-					
-					<div class="localCity">
-						<div class="intrCity">
-							<h2>福建●厦门&nbsp;体验中心</h2>
-							<h3>北京市西城区新街口南大街61号</h3>
-							<h4>周一至周日 9:30-20:00</h4>
-							<h4>咨询电话：15117991700</h4>
-						</div>
-						<div class="shopshow"><a href="#"><img src="../img/fujian.jpg" /></a></div>
-					</div>		
-			<!-------------------------北京--------------------------------------------- -->
-					
-					<div class="localCity">
-						<div class="intrCity">
-							<h2>海南●朝阳区旗舰店&nbsp;体验中心</h2>
-							<h3>北京市西城区新街口南大街61号</h3>
-							<h4>周一至周日 9:30-20:00</h4>
-							<h4>咨询电话：15117991700</h4>
-						</div>
-						<div class="shopshow"><a href="#"><img src="../img/hainan.jpg" /></a></div>
-					</div>				
-			<!-------------------------北京--------------------------------------------- -->
-					
-					<div class="localCity">
-						<div class="intrCity">
-							<h2>重庆●朝阳区旗舰店&nbsp;体验中心</h2>
-							<h3>北京市西城区新街口南大街61号</h3>
-							<h4>周一至周日 9:30-20:00</h4>
-							<h4>咨询电话：15117991700</h4>
-						</div>
-						<div class="shopshow"><a href="#"><img src="../img/chongqin.jpg" /></a></div>
-					</div>				
-			<!-------------------------北京--------------------------------------------- -->
-					
-					<div class="localCity">
-						<div class="intrCity">
-							<h2>湖南●朝阳区旗舰店&nbsp;体验中心</h2>
-							<h3>北京市西城区新街口南大街61号</h3>
-							<h4>周一至周日 9:30-20:00</h4>
-							<h4>咨询电话：15117991700</h4>
-						</div>
-						<div class="shopshow"><a href="#"><img src="../img/hunan.jpg" /></a></div>
-					</div>				
-			<!-------------------------北京--------------------------------------------- -->	
-					<div class="localCity">
-						<div class="intrCity">
-							<h2>河北●朝阳区旗舰店&nbsp;体验中心</h2>
-							<h3>北京市西城区新街口南大街61号</h3>
-							<h4>周一至周日 9:30-20:00</h4>
-							<h4>咨询电话：15117991700</h4>
-						</div>
-						<div class="shopshow"><a href="#"><img src="../img/hebei.jpg" /></a></div>
+					<div class="shopshow"><a href="#"><img src="../img/shenzhen.jpg" /></a></div>
+				</div>
+		<!-------------------------天津--------------------------------------------- -->
+				<div class="localCity">
+					<div class="intrCity">
+						<h2>天津&nbsp;体验中心</h2>
+						<h3>北京市西城区新街口南大街61号</h3>
+						<h4>周一至周日 9:30-20:00</h4>
+						<h4>咨询电话：15117991700</h4>
 					</div>
-			<!-------------------------北京--------------------------------------------- -->	
-					<div class="localCity">
-						<div class="intrCity">
-							<h2>江西●朝阳区旗舰店&nbsp;体验中心</h2>
-							<h3>北京市西城区新街口南大街61号</h3>
-							<h4>周一至周日 9:30-20:00</h4>
-							<h4>咨询电话：15117991700</h4>
-						</div>
-						<div class="shopshow"><a href="#"><img src="../img/jiangxi.jpg" /></a></div>
-					</div>									
+					<div class="shopshow"><a href="#"><img src="../img/tianjin.jpg" /></a></div>
+				</div>		
+		<!-------------------------北京--------------------------------------------- -->
+				
+				<div class="localCity">
+					<div class="intrCity">
+						<h2>四川●成都&nbsp;体验中心</h2>
+						<h3>北京市西城区新街口南大街61号</h3>
+						<h4>周一至周日 9:30-20:00</h4>
+						<h4>咨询电话：15117991700</h4>
+					</div>
+					<div class="shopshow"><a href="#"><img src="../img/chengdu.jpg" /></a></div>
 				</div>				
-			</div>
-		
-	
-			
-	
+		<!-------------------------北京--------------------------------------------- -->
+				
+				<div class="localCity">
+					<div class="intrCity">
+						<h2>浙江●杭州店&nbsp;体验中心</h2>
+						<h3>北京市西城区新街口南大街61号</h3>
+						<h4>周一至周日 9:30-20:00</h4>
+						<h4>咨询电话：15117991700</h4>
+					</div>
+					<div class="shopshow"><a href="#"><img src="../img/zhejiang.jpg" /></a></div>
+				</div>				
+		<!-------------------------北京--------------------------------------------- -->
+				
+				<div class="localCity">
+					<div class="intrCity">
+						<h2>江苏●南京&nbsp;体验中心</h2>
+						<h3>北京市西城区新街口南大街61号</h3>
+						<h4>周一至周日 9:30-20:00</h4>
+						<h4>咨询电话：15117991700</h4>
+					</div>
+					<div class="shopshow"><a href="#"><img src="../img/jiangsu.jpg" /></a></div>
+				</div>	
+		<!-------------------------北京--------------------------------------------- -->
+				
+				<div class="localCity">
+					<div class="intrCity">
+						<h2>福建●厦门&nbsp;体验中心</h2>
+						<h3>北京市西城区新街口南大街61号</h3>
+						<h4>周一至周日 9:30-20:00</h4>
+						<h4>咨询电话：15117991700</h4>
+					</div>
+					<div class="shopshow"><a href="#"><img src="../img/fujian.jpg" /></a></div>
+				</div>		
+		<!-------------------------北京--------------------------------------------- -->
+				
+				<div class="localCity">
+					<div class="intrCity">
+						<h2>海南●朝阳区旗舰店&nbsp;体验中心</h2>
+						<h3>北京市西城区新街口南大街61号</h3>
+						<h4>周一至周日 9:30-20:00</h4>
+						<h4>咨询电话：15117991700</h4>
+					</div>
+					<div class="shopshow"><a href="#"><img src="../img/hainan.jpg" /></a></div>
+				</div>				
+		<!-------------------------北京--------------------------------------------- -->
+				
+				<div class="localCity">
+					<div class="intrCity">
+						<h2>重庆●朝阳区旗舰店&nbsp;体验中心</h2>
+						<h3>北京市西城区新街口南大街61号</h3>
+						<h4>周一至周日 9:30-20:00</h4>
+						<h4>咨询电话：15117991700</h4>
+					</div>
+					<div class="shopshow"><a href="#"><img src="../img/chongqin.jpg" /></a></div>
+				</div>				
+		<!-------------------------北京--------------------------------------------- -->
+				
+				<div class="localCity">
+					<div class="intrCity">
+						<h2>湖南●朝阳区旗舰店&nbsp;体验中心</h2>
+						<h3>北京市西城区新街口南大街61号</h3>
+						<h4>周一至周日 9:30-20:00</h4>
+						<h4>咨询电话：15117991700</h4>
+					</div>
+					<div class="shopshow"><a href="#"><img src="../img/hunan.jpg" /></a></div>
+				</div>				
+		<!-------------------------北京--------------------------------------------- -->	
+				<div class="localCity">
+					<div class="intrCity">
+						<h2>河北●朝阳区旗舰店&nbsp;体验中心</h2>
+						<h3>北京市西城区新街口南大街61号</h3>
+						<h4>周一至周日 9:30-20:00</h4>
+						<h4>咨询电话：15117991700</h4>
+					</div>
+					<div class="shopshow"><a href="#"><img src="../img/hebei.jpg" /></a></div>
+				</div>
+		<!-------------------------北京--------------------------------------------- -->	
+				<div class="localCity">
+					<div class="intrCity">
+						<h2>江西●朝阳区旗舰店&nbsp;体验中心</h2>
+						<h3>北京市西城区新街口南大街61号</h3>
+						<h4>周一至周日 9:30-20:00</h4>
+						<h4>咨询电话：15117991700</h4>
+					</div>
+					<div class="shopshow"><a href="#"><img src="../img/jiangxi.jpg" /></a></div>
+				</div>									
+			</div>				
+		</div>
+
 			<div class="security"></div>
 			<div class="aboutWrap">
 				<ul class="aboutUs">
@@ -527,8 +444,7 @@
 					</div>
 					<p>体验中心地址：天河区龙口西路1号保利中辰广场1702室 联系电话：4006-578-478</p>
 					<p>Copyright @ 2007-2014 深圳市戴欧妮网络科技有限公司 ALL Rights Reserved 经营许可证编号：粤B2-20080371 粤ICP备11058956号-1</p>
-				</div>
-				
+				</div>	
 			</div>
 			<div class="linkWrap">
 				<ul class="link">
@@ -540,7 +456,6 @@
 					<li><a href="#"><img src="../img/link6.jpg" alt="*" /></a></li>
 					<li id="last"><a href="#"><img src="../img/link7.jpg" alt="*" /></a></li>
 				</ul>
-				
 			</div>
 			<div class="friendLinkWrap">
 				<ul class="friendLink">
@@ -577,16 +492,94 @@
 				<p class="friendWeb">友情链接&nbsp;:</p>
 			</div>
 		</div>
-		
 		<ul class="purchaseConsult">
-			<li><a><img src="../img/consult1.jpg" alt="*" /></a></li>
-			<li><a><img src="../img/consult2.jpg" alt="*" /></a></li>
-			<li><a><img src="../img/consult3.jpg" alt="*" /></a></li>
-			<li><a><img src="../img/consult4.jpg" alt="*" /></a></li>
-			<li><a><img src="../img/consult5.jpg" alt="*" /></a></li>
-			<li><a><img src="../img/consult6.jpg" alt="*" /></a></li>
+			<li>
+				<a>
+					<img src="../img/consult1.jpg" alt="*" />
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="../img/consult2.jpg" alt="*" />
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="../img/consult3.jpg" alt="*" />
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="../img/consult4.jpg" alt="*" />
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="../img/consult5.jpg" alt="*" />
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="../img/consult6.jpg" alt="*" />
+				</a>
+				<div class='popover'><img src="../img/tcewm.png" alt="*" /></div>
+			</li>
 		</ul>
-		
-	
+		<!---------------------------------------------js部分----------------------------------------------->				
+		<script>
+			$(function(){
+				/*-------------------------------一、common部分；-------------------------------------*/
+			
+				/*-------------------------------1.下拉菜单subMenu效果；-------------------------------------*/
+				var $allType = $('.allType');
+				var $subMenu = $('.subMenu');
+				var $liMenu = $subMenu.find('li');
+				//添加一个span
+				$('<span/>').addClass('minTitle').insertBefore($subMenu);
+				var $minTitle = $('.minTitle');
+				$allType.hover(function(){
+					$subMenu.stop(true).slideDown(200);
+					$minTitle.css('background-image','url(../img/subTitle2.jpg)');
+					console.log($minTitle);
+					console.log('show');
+				},function(){
+					$subMenu.stop(true).slideUp(800);
+					$minTitle.css('background-image','url(../img/subTitle1.jpg)');
+				})
+		/*-------------------------------2.城市实体店切换效果；-------------------------------------*/
+			
+				var $localCity = $('.localCity');	
+				var $cityList = $('.cityList').find('li');
+				console.log($localCity.length);
+				console.log($cityList.length);
+				var index = 0;
+				$.each($cityList,function(idx,city){
+					$('<span/>').addClass('cityUnderline').appendTo(city);
+					$localCity.eq(0).show().siblings().hide();
+					
+				})
+				
+				//每个城市添加mouseover事件；
+				$cityList.on('mouseover',function(){
+					$(this).find('a').css('color','#e13a68');
+					$(this).find('span').css('display','block');
+					$(this).siblings().find('a').css('color','#222');
+					$(this).siblings().find('span').css('display','none');
+					index = $(this).index();
+					$localCity.eq(index).show().siblings().hide();
+				})
+					/*	右侧咨询栏的弹窗二维码	*/
+				var $ulTc = $('.purchaseConsult');
+				var $liTc = $ulTc.find('li');
+				var $ewm = $liTc.eq(4);
+				var $popover = $('.popover');
+				$ewm.on('mouseover',function(){
+					$popover.show();
+					
+				}).on('mouseout',function(){
+					$popover.hide();				
+				})
+			});
+		</script>
 	</body>
 </html>

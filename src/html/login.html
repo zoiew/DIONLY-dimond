@@ -15,54 +15,7 @@
 		
 		<!-------------------引入封装的函数等相关的文件----------------------------------->
 		<script src="../js/index.js"></script>
-		
-		<!---------------------------------------------js部分----------------------------------------------->				
-		<script>
-			$(function(){
-				/*-------------------------------一、common部分；-------------------------------------*/
-			
-				/*-------------------------------1.下拉菜单subMenu效果；-------------------------------------*/
-				var $allType = $('.allType');
-				var $subMenu = $('.subMenu');
-				var $liMenu = $subMenu.find('li');
-				//添加一个span
-				$('<span/>').addClass('minTitle').insertBefore($subMenu);
-				var $minTitle = $('.minTitle');
-				$allType.hover(function(){
-					$subMenu.stop(true).slideDown(200);
-					$minTitle.css('background-image','url(img/subTitle2.jpg)');
-					console.log($minTitle);
-					console.log('show');
-				},function(){
-					$subMenu.stop(true).slideUp(800);
-					$minTitle.css('background-image','url(img/subTitle1.jpg)');
-				})
-		/*-------------------------------2.城市实体店切换效果；-------------------------------------*/
-			
-				var $localCity = $('.localCity');	
-				var $cityList = $('.cityList').find('li');
-				console.log($localCity.length);
-				console.log($cityList.length);
-				var index = 0;
-				$.each($cityList,function(idx,city){
-					$('<span/>').addClass('cityUnderline').appendTo(city);
-					$localCity.eq(0).show().siblings().hide();
-					
-				})
-				
-				//每个城市添加mouseover事件；
-				$cityList.on('mouseover',function(){
-					$(this).find('a').css('color','#e13a68');
-					$(this).find('span').css('display','block');
-					$(this).siblings().find('a').css('color','#222');
-					$(this).siblings().find('span').css('display','none');
-					index = $(this).index();
-					$localCity.eq(index).show().siblings().hide();
-				})
-			});
-
-		</script>
-	
+		<script src="../js/login.js"></script>
 	</head>
 	<body>
 		<!-------------------topbar---------------------------------->
@@ -121,15 +74,17 @@
 			<h2><img src="../img/phone.png" alt="*"/></h2>
 		</div>
 <!---------------------------------------------registerArea----------------------------------------------->				
-		<div class="registerWrap">
-			<div class="registerArea">
-				<h3><a href="#">免费注册</a></h3>
-				<form name="register" method="post" action="">
+		<div class="loginWrap">
+			<div class="loginArea">
+				<h3><a href="register.html">免费注册</a></h3>
+				<form name="login" method="post" action="">
 					<p><input id ="mobieNum" type="text" value=""/></p>
-					<p><input id = "userPassword" type="password" /><span></span><b></b></p>
+					<p><input id = "userPassword" type="password" /></p>
 					<p class="last"><input id = "confirm" type="checkbox" value="" /><a href="#">忘记密码？</a><span>自动登陆</span> </p>
-					<p class="last"><input id = "regBtn" type="button" value="" /></p>
+					<p class="last"><input id = "loginBtn" type="button" value="" /></p>
 				</form>
+				<p class="tishi1"></p>
+				<p class="tishi2"></p>
 				<div class="loginPath">
 					<a href="#"><img src="../img/path1.jpg" alt="*" /></a>
 					<a href="#"><img src="../img/path2.jpg" alt="*" /></a>
@@ -137,9 +92,7 @@
 				</div>
 			</div>
 		</div>
-
-			
-		
+	
 <!---------------------------------------------footer----------------------------------------------->				
 		<div class="footer">
 			
@@ -247,14 +200,95 @@
 		</div>
 		
 		<ul class="purchaseConsult">
-			<li><a><img src="../img/consult1.jpg" alt="*" /></a></li>
-			<li><a><img src="../img/consult2.jpg" alt="*" /></a></li>
-			<li><a><img src="../img/consult3.jpg" alt="*" /></a></li>
-			<li><a><img src="../img/consult4.jpg" alt="*" /></a></li>
-			<li><a><img src="../img/consult5.jpg" alt="*" /></a></li>
-			<li><a><img src="../img/consult6.jpg" alt="*" /></a></li>
+			<li>
+				<a>
+					<img src="../img/consult1.jpg" alt="*" />
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="../img/consult2.jpg" alt="*" />
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="../img/consult3.jpg" alt="*" />
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="../img/consult4.jpg" alt="*" />
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="../img/consult5.jpg" alt="*" />
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="../img/consult6.jpg" alt="*" />
+				</a>
+				<div class='popover'><img src="../img/tcewm.png" alt="*" /></div>
+			</li>
 		</ul>
-		
+		<!---------------------------------------------js部分----------------------------------------------->				
+		<script>
+			$(function(){
+				/*-------------------------------一、common部分；-------------------------------------*/
+			
+				/*-------------------------------1.下拉菜单subMenu效果；-------------------------------------*/
+				var $allType = $('.allType');
+				var $subMenu = $('.subMenu');
+				var $liMenu = $subMenu.find('li');
+				//添加一个span
+				$('<span/>').addClass('minTitle').insertBefore($subMenu);
+				var $minTitle = $('.minTitle');
+				$allType.hover(function(){
+					$subMenu.stop(true).slideDown(200);
+					$minTitle.css('background-image','url(../img/subTitle2.jpg)');
+					console.log($minTitle);
+					console.log('show');
+				},function(){
+					$subMenu.stop(true).slideUp(800);
+					$minTitle.css('background-image','url(../img/subTitle1.jpg)');
+				})
+		/*-------------------------------2.城市实体店切换效果；-------------------------------------*/
+			
+				var $localCity = $('.localCity');	
+				var $cityList = $('.cityList').find('li');
+				console.log($localCity.length);
+				console.log($cityList.length);
+				var index = 0;
+				$.each($cityList,function(idx,city){
+					$('<span/>').addClass('cityUnderline').appendTo(city);
+					$localCity.eq(0).show().siblings().hide();
+					
+				})
+				
+				//每个城市添加mouseover事件；
+				$cityList.on('mouseover',function(){
+					$(this).find('a').css('color','#e13a68');
+					$(this).find('span').css('display','block');
+					$(this).siblings().find('a').css('color','#222');
+					$(this).siblings().find('span').css('display','none');
+					index = $(this).index();
+					$localCity.eq(index).show().siblings().hide();
+				})
+					/*	右侧咨询栏的弹窗二维码	*/
+				var $ulTc = $('.purchaseConsult');
+				var $liTc = $ulTc.find('li');
+				var $ewm = $liTc.eq(4);
+				var $popover = $('.popover');
+				$ewm.on('mouseover',function(){
+					$popover.show();
+					
+				}).on('mouseout',function(){
+					$popover.hide();				
+				})
+			});
+
+		</script>
 	
 	</body>
 </html>
