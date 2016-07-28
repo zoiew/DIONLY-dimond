@@ -8,9 +8,9 @@
 .loginArea .last{height:30px;line-height:20px;margin-top:10px;}
 .loginArea .last span{width:80px;height:30px;line-height:30px;float:right;margin-right:140px;}
 .loginArea .last a{height:30px;line-height:30px;float:right;margin-right:30px;}
-#mobieNum{width:150px;margin-left:153px;}
+#mobieLogin{width:150px;margin-left:153px;}
 
-#userPassword,#checkPassword{width:160px;margin-left:153px;}
+#userPasswordLogin,#checkPassword{width:160px;margin-left:153px;}
 #confirm,#loginBtn{margin-left:60px;}
 #loginBtn{background:url(../img/menberLogin.jpg) no-repeat;width:277px;height:32px;}
 #getCheckCode{margin-left:20px;background:url(../img/btnBg.jpg) 0 3px repeat-x;}
